@@ -1,51 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Interactive card details form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+  <main>
+    <img src="images/bg-main-desktop.png" alt="bg">
+    <div class="cards">
+      <div class="front-card">
+        <img src="images/bg-card-front.png" alt="card-front">
+        <span class="number-card">0000 0000 0000 0000</span>
+        <h2 class="number-card">Jane Appleseed</h2>
+        <span class="number-card">00/00</span>
+      </div>
+      <div class="verso-card">
+        <img src="images/bg-card-back.png" alt="card-verso">
+        <span>000</span>
+      </div>
+    </div>
+    <div class="form">
+      <form action="">
+        <label for="">Cardholder Name</label>
+        <input type="text" placeholder="e.g. Jane Appleseed">
+        <label for="">Card Number</label>
+        <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+        <label for="">Exp. Date (MM/YY)</label>
+        <input type="text" placeholder="MM">
+        <input type="text" placeholder="YY">
+        <label for="">CVC</label>
+        <input type="text" placeholder="e.g. 123">
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+        <button>Confirm</button>
+      </form>
 
-  000
+    </div>
+  </main>
 
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
 
   <!-- Completed state start -->
+  <section>
+    <div class="massage">
+      <img src="images/icon-complete.svg" alt="icon">
+      <h1>Thank you!</h1>
+      <p> We've added your card details</p>
+      <button>Continue</button>
+    </div>
+  </section>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
 </body>
+
 </html>
