@@ -64,6 +64,7 @@ html {
     bottom: 20px;
     left: 30px;
     font-size: 20px;
+    letter-spacing: 2px;
     color: var(--White);
 }
 
@@ -147,7 +148,8 @@ form .span-required {
 .invalid input {
     border: 2px solid var(--Red);
 }
-.invalid .span-required{
+
+.invalid .span-required {
     display: flex;
 }
 
@@ -204,4 +206,115 @@ footer {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* =================== responsive =================== */
+@media only screen and (max-width: 400px) {
+    .main {
+        display: grid;
+        background-image: url(images/bg-main-mobile.png);
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0 25px;
+    }
+
+    .cards {
+        display: grid;
+        width: 100%;
+    }
+
+    .front-card {
+        display: flex;
+        width: 300px;
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        z-index: 1;
+    }
+
+    .front-card img {
+        object-fit: contain;
+        width: 280px;
+    }
+
+    .front-card .logo {
+        width: 50px;
+        top: 55px;
+        left: 30px;
+    }
+
+    .front-card h2 {
+        position: absolute;
+        bottom: 55px;
+        left: 30px;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: var(--White);
+    }
+
+    .front-card .p {
+        display: flex;
+        position: absolute;
+        bottom: 55px;
+        right: 30px;
+        font-size: 15px;
+        color: var(--White);
+    }
+
+    .front-card span {
+        position: absolute;
+        font-size: 22px;
+        bottom: 80px;
+        color: var(--White);
+    }
+
+    .verso-card {
+        display: grid;
+        width: 280px;
+        left: 20px;
+        top: -10px;
+    }
+
+    .verso-card img {
+        display: grid;
+        width: 100%;
+        position: absolute;
+    }
+
+    .verso-card span {
+        position: absolute;
+        font-size: 15px;
+        right: 35px;
+        color: var(--White);
+    }
+
+    .section-form {
+        display: grid;
+        width: 100%;
+        position: relative;
+        margin-top: -60px;
+       
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+    } 
+
+    form .info-card-verso .data-card input {
+        width: 45px;
+        margin-right: 15px;
+    }
+
+    .message {
+        display: none;
+        width: 370px;
+        padding: 20px;
+    }
+
+    footer {
+        display: none;
+    }
+
 }

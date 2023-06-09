@@ -1,15 +1,16 @@
 const form = document.getElementById('form');
-const confirmation = document.querySelector('.message')
 const nameField = document.querySelector('.name-field');
 const nameInput = document.querySelector('.name-input');
 const numberField = document.querySelector('.number-field');
 const numberInput = document.querySelector('.number-input');
+const nInput = document.querySelector('.n-input');
 const dataField = document.querySelector('.data-field');
 const monthInput = document.querySelector('.month-input');
 const yearInput = document.querySelector('.year-input');
 const cvcField = document.querySelector('.cvc-field');
 const cvcInput = document.querySelector('.cvc-input');
 
+const confirmation = document.querySelector('.message');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -26,49 +27,48 @@ form.addEventListener('submit', (e) => {
     cvcInput.addEventListener("keyup", cvcValidate);
 
     if (
-        !nameInput.classList.contains('invalid'),
-        !numberInput.classList.contains('invalid'),
-        !monthInput.classList.contains('invalid'),
-        !yearInput.classList.contains('invalid'),
-        !cvcInput.classList.contains('invalid')
-    ) {
-      //  alert("ola mundo")
-        form.style.display = "none"
+        !nameField.classList.contains('invalid') &&
+        !numberField.classList.contains('invalid') &&
+        !dataField.classList.contains('invalid') &&
+        !cvcField.classList.contains('invalid')
+    ) { 
         confirmation.style.display = "block"
+        form.style.display = "none"
     }
 });
 
 function nameValidate() {
     const namePattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    
     if (!nameInput.value.match(namePattern)) {
-        return nameField.classList.add('invalid'); // adding invalid class if email do not matched with email pattern
+        return nameField.classList.add('invalid');
     }
-    nameField.classList.remove('invalid'); // removing invalid class if email value matched with emailPattern
+    nameField.classList.remove('invalid');
 
 }
 
 function numberCardValidate() {
-    const numberPattern = "[0-9]{16}"
+    const numberPattern = "^[0-9 ]{19}"
     if (numberInput.value == '' || !numberInput.value.match(numberPattern)) {
-        return numberField.classList.add('invalid'); // adding invalid class if email do not matched with email pattern
+        return numberField.classList.add('invalid');
     }
-    numberField.classList.remove('invalid'); // removing invalid class if email value matched with emailPattern
+    numberField.classList.remove('invalid');
 }
 
 function dataValidate() {
     const dataPattern = "[0-9]{2}"
     if (monthInput.value == '' || yearInput.value == '' || !monthInput.value.match(dataPattern) || !yearInput.value.match(dataPattern)) {
-        return dataField.classList.add('invalid'); // adding invalid class if email do not matched with email pattern
+        return dataField.classList.add('invalid');
     }
-    dataField.classList.remove('invalid'); // removing invalid class if email value matched with emailPattern
+    dataField.classList.remove('invalid');
 }
 
 function cvcValidate() {
     const cvcPattern = "[0-9]{3}"
     if (cvcInput.value == '' || !cvcInput.value.match(cvcPattern)) {
-        return cvcField.classList.add('invalid'); // adding invalid class if email do not matched with email pattern
+        return cvcField.classList.add('invalid');
     }
-    cvcField.classList.remove('invalid'); // removing invalid class if email value matched with emailPattern
+    cvcField.classList.remove('invalid');
 }
 
 
@@ -78,7 +78,7 @@ nameInput.oninput = () => {
 }
 
 numberInput.oninput = () => {
-    document.querySelector('.number-card').innerHTML = numberInput.value.toUpperCase()
+    document.querySelector('.number-card').innerHTML = numberInput.value
 }
 
 monthInput.oninput = () => {
@@ -92,3 +92,12 @@ yearInput.oninput = () => {
 cvcInput.oninput = () => {
     document.querySelector('.num-verso').innerHTML = cvcInput.value.toUpperCase()
 }
+
+
+nInput.addEventListener('keypress', () => {
+    let numberInputLenght = nInput.value.length 
+
+    if(numberInputLenght === 4 || numberInputLenght === 9 || numberInputLenght === 14) {
+        nInput.value += ' '
+    }
+}) 
