@@ -1,4 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+html {
+    /* (active input border) */
+    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    /* (input errors) */
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+.main {
+    background-image: url(images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+}
+
+/* ==================== cards ===================== */
+.cards {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    flex-basis: 50%;
+}
+
+.front-card {
+    display: flex;
+    width: 447px;
+    height: 245px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.front-card img {
+    object-fit: contain;
+}
+
+.front-card .logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.front-card h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-size: 20px;
+    color: var(--White);
+}
+
+.front-card .p {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 20px;
+    color: var(--White);
+}
+
+.front-card span {
+    position: absolute;
+    font-size: 35px;
+    bottom: 60px;
+    color: var(--White);
+}
 
 
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+.verso-card {
+    display: flex;
+    width: 447px;
+    height: 245px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 90px;
+}
+
+.verso-card span {
+    position: absolute;
+    right: 60px;
+    font-size: 18px;
+    color: var(--White);
+}
+
+/* ==================== form =======================*/
+
+.section-form {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-basis: 50%;
+}
+
+form {
+    display: block;
+    text-align: start;
+    /* margin-left: -100px; */
+}
+
+form label {
+    font-size: 13px;
+    text-transform: uppercase;
+
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--Light-grayish-violet);
+    outline-color: var(--Dark-grayish-violet);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* ======= message error ======*/
+form .span-required {
+    display: none;
+    margin-top: -15px;
+    font-size: 11px;
+    color: var(--Red);
+}
+
+.invalid input {
+    border: 2px solid var(--Red);
+}
+.invalid .span-required{
+    display: flex;
+}
+
+form .info-card-verso,
+.data-card {
+    display: flex;
+}
+
+form .info-card-verso .data-card input {
+    width: 60px;
+    margin-right: 15px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--White);
+    background: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+.message {
+    display: none;
+    width: 380px;
+}
+
+.message img,
+.message h1,
+.message p {
+    padding-bottom: 20px;
+}
+
+
+
+/* ================ footer ================ */
+footer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.attribution {
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    top: -20px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

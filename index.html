@@ -15,55 +15,80 @@
 </head>
 
 <body>
-  <main>
-    <img src="images/bg-main-desktop.png" alt="bg">
+  <main class="main">
+
     <div class="cards">
       <div class="front-card">
         <img src="images/bg-card-front.png" alt="card-front">
+        <img class="logo" src="images/card-logo.svg" alt="">
         <span class="number-card">0000 0000 0000 0000</span>
-        <h2 class="number-card">Jane Appleseed</h2>
-        <span class="number-card">00/00</span>
+        <h2 class="name-card">JANE APPLESEED</h2>
+       <div class="p">
+         <p class="num-card">00</p> /
+         <p class="num1-card">00</p>
+      </div>
       </div>
       <div class="verso-card">
         <img src="images/bg-card-back.png" alt="card-verso">
-        <span>000</span>
+        <span class="num-verso">000</span>
       </div>
     </div>
-    <div class="form">
-      <form action="">
+
+    <div class="section-form">
+      <form id="form">
         <label for="">Cardholder Name</label>
-        <input type="text" placeholder="e.g. Jane Appleseed">
+        <div class="name-field">
+          <input class="name-input" type="text" placeholder="e.g. Jane Appleseed" maxlength="30">
+          <span class="span-required">Can't be blank</span>
+        </div>
         <label for="">Card Number</label>
-        <input type="text" placeholder="e.g. 1234 5678 9123 0000">
-        <label for="">Exp. Date (MM/YY)</label>
-        <input type="text" placeholder="MM">
-        <input type="text" placeholder="YY">
-        <label for="">CVC</label>
-        <input type="text" placeholder="e.g. 123">
+        <div class="number-field">
+          <input class="number-input" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+          <span class="span-required">Wrong format, numbers only</span>
+        </div>
+        <div class="info-card-verso">
+          <div>
+            <label for="">Exp. Date (MM/YY)</label>
+            <div class="data-card">
+              <div class="data-field">
+                <input class="month-input" type="text" placeholder="MM" maxlength="2">
+                <input class="year-input" type="text" placeholder="YY" maxlength="2">
+                <span class="span-required">Can't be blank</span>
+              </div>
+            </div>
 
-        <button>Confirm</button>
+          </div>
+          <div class="cvc-card">
+            <label for="">CVC</label>
+            <div class="cvc-field">
+              <input class="cvc-input" type="text" placeholder="e.g. 123" maxlength="3">
+              <span class="span-required">Can't be blank</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="submit">Confirm</button>
       </form>
-
+      <!-- Completed state start -->
+      <div class="message">
+        <img src="images/icon-complete.svg" alt="icon">
+        <h1>Thank you!</h1>
+        <p> We've added your card details</p>
+        <button>Continue</button>
+      </div>
     </div>
+
   </main>
 
-
-  <!-- Completed state start -->
-  <section>
-    <div class="massage">
-      <img src="images/icon-complete.svg" alt="icon">
-      <h1>Thank you!</h1>
-      <p> We've added your card details</p>
-      <button>Continue</button>
-    </div>
-  </section>
 
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Leandro Pinho</a>.
     </div>
   </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
